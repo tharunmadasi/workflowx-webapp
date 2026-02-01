@@ -32,3 +32,15 @@ button {
 button:hover {
   background-color: #1d4ed8;
 }
+
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+li {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
