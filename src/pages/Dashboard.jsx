@@ -1,4 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../redux/slices/authSlice";
+
 import {
   submitItem,
   reviewItem,
@@ -13,6 +15,14 @@ function Dashboard() {
   return (
     <div className="page">
       <h2>{role} Dashboard</h2>
+
+      {/* 🔴 LOGOUT BUTTON (ADDED HERE) */}
+      <button
+        onClick={() => dispatch(logout())}
+        style={{ marginBottom: "20px" }}
+      >
+        Logout
+      </button>
 
       {items.length === 0 && <p>No items found</p>}
 
@@ -56,9 +66,7 @@ function Dashboard() {
             <p style={{ color: "#666" }}>Read-only access</p>
           )}
 
-          {/* ================================================= */}
-          {/* 🔽 HISTORY SECTION — ADDED BELOW BUTTONS 🔽 */}
-          {/* ================================================= */}
+          {/* 🔽 HISTORY SECTION */}
           <div style={{ marginTop: "15px" }}>
             <h5>History</h5>
 
@@ -75,8 +83,6 @@ function Dashboard() {
               <p style={{ color: "#888" }}>No history yet</p>
             )}
           </div>
-          {/* ================================================= */}
-
         </div>
       ))}
     </div>
